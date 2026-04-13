@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Edge | Weekly Tech Insights</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main class="hero-container">
+        <div class="glass-card" id="subscription-card">
+            <div class="icon-circle">📩</div>
+            <h1>Stay in the Loop.</h1>
+            <p>Join **5,000+** developers receiving weekly insights on C#, System Design, and VR trends.</p>
+
+            <form id="subscribe-form">
+                <input type="email" id="email-input" placeholder="Enter your best email..." required>
+                <button type="submit" class="btn-subscribe">Subscribe Now</button>
+            </form>
+            <p class="small-print">No spam. Only high-signal content. Unsubscribe anytime.</p>
+        </div>
+
+        <div class="glass-card hidden" id="success-card">
+            <div class="icon-circle success">✓</div>
+            <h1>You're on the list!</h1>
+            <p>Check your inbox soon for your first edition of **The Edge**.</p>
+            <button onclick="resetView()" class="btn-outline">Back to Home</button>
+        </div>
+    </main>
+
+    <section class="admin-panel">
+        <h3>Subscribers (Mock Database)</h3>
+        <ul id="subscriber-list"></ul>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow | To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="todo-container">
+        <header>
+            <h1>My Tasks</h1>
+            <p id="date-display"></p>
+        </header>
+
+        <form id="todo-form">
+            <input type="text" id="todo-input" placeholder="What needs to be done?" required>
+            <button type="submit" id="add-btn">Add</button>
+        </form>
+
+        <ul id="todo-list">
+            </ul>
+
+        <div class="footer">
+            <span id="items-left">0 items left</span>
+            <button id="clear-completed">Clear Completed</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

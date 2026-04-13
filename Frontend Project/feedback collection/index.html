@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FeedbackHub | Voice of the User</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <section class="feedback-card">
+            <header>
+                <h1>Share Your Experience</h1>
+                <p>Your feedback helps us improve our services.</p>
+            </header>
+
+            <form id="feedback-form">
+                <div class="rating-group">
+                    <label>How would you rate us?</label>
+                    <div class="stars" id="star-rating">
+                        <span class="star" data-value="1">&#9733;</span>
+                        <span class="star" data-value="2">&#9733;</span>
+                        <span class="star" data-value="3">&#9733;</span>
+                        <span class="star" data-value="4">&#9733;</span>
+                        <span class="star" data-value="5">&#9733;</span>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Category</label>
+                    <select id="fb-category">
+                        <option value="Service">Service Quality</option>
+                        <option value="UI/UX">Design/Ease of Use</option>
+                        <option value="Bugs">Bug Report</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>Your Message</label>
+                    <textarea id="fb-message" placeholder="Tell us what you think..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Submit Feedback</button>
+            </form>
+        </section>
+
+        <section class="dashboard">
+            <div class="dash-header">
+                <h2>Feedback Dashboard</h2>
+                <button id="toggle-view" class="btn-secondary">View History</button>
+            </div>
+            <div id="feedback-list" class="feedback-list hidden">
+                </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

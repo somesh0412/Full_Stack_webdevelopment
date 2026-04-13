@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureVote | Digital Ballot</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="voting-container">
+        <header>
+            <h1>2026 Innovation Awards</h1>
+            <p>Select your favorite technology for the upcoming year.</p>
+        </header>
+
+        <div id="ballot-box">
+            <form id="voting-form">
+                <div class="option">
+                    <input type="radio" name="candidate" id="opt1" value="Artificial Intelligence" required>
+                    <label for="opt1">Artificial Intelligence</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="candidate" id="opt2" value="Quantum Computing">
+                    <label for="opt2">Quantum Computing</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="candidate" id="opt3" value="Virtual Reality">
+                    <label for="opt3">Virtual Reality</label>
+                </div>
+                <button type="submit" id="submit-vote">Submit My Vote</button>
+            </form>
+        </div>
+
+        <div id="voted-message" class="hidden">
+            <div class="success-icon">✓</div>
+            <h2>Thank You!</h2>
+            <p>Your vote for <span id="chosen-candidate"></span> has been recorded.</p>
+            <p class="warning">Note: You cannot vote again from this device.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

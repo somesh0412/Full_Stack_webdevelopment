@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina Dine | Exquisite Menu</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <h1 class="logo">Lumina<span>Dine</span></h1>
+        <div class="nav-links">
+            <button onclick="showSection('menu')">Menu</button>
+            <button onclick="showSection('feedback')">Feedback</button>
+            <button class="cart-btn" onclick="showSection('order')">
+                🛒 <span id="cart-count">0</span>
+            </button>
+        </div>
+    </nav>
+
+    <main id="menu-section" class="content-section">
+        <div class="section-header">
+            <h2>Our Signature Menu</h2>
+            <p>Crafted with fresh local ingredients</p>
+        </div>
+        <div class="menu-grid" id="menu-grid">
+            </div>
+    </main>
+
+    <section id="order-section" class="content-section hidden">
+        <div class="section-header">
+            <h2>Your Order</h2>
+        </div>
+        <div class="cart-container">
+            <ul id="cart-items"></ul>
+            <div class="cart-total">
+                <h3>Total: ₹<span id="total-price">0</span></h3>
+                <button class="btn-primary" onclick="checkout()">Confirm Order</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="feedback-section" class="content-section hidden">
+        <div class="feedback-card">
+            <h2>Share Your Experience</h2>
+            <form id="feedback-form">
+                <input type="text" placeholder="Your Name" required>
+                <select id="rating">
+                    <option value="5">⭐⭐⭐⭐⭐ (Excellent)</option>
+                    <option value="4">⭐⭐⭐⭐ (Good)</option>
+                    <option value="3">⭐⭐⭐ (Average)</option>
+                </select>
+                <textarea placeholder="How was the food and service?" required></textarea>
+                <button type="submit" class="btn-primary">Submit Review</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

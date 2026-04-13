@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LibroTrack | My Digital Library</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="navbar">
+        <h1 class="logo">Libro<span>Track</span></h1>
+        <div class="nav-actions">
+            <input type="text" id="search-bar" placeholder="Search my library...">
+            <button id="add-book-btn" class="btn-primary">+ Add Book</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="stats-bar">
+            <span id="book-count">0 Books</span>
+            <div class="filter-group">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="Read">Read</button>
+                <button class="filter-btn" data-filter="Reading">Reading</button>
+                <button class="filter-btn" data-filter="Want to Read">Want to Read</button>
+            </div>
+        </div>
+
+        <div id="library-grid" class="library-grid">
+            </div>
+    </main>
+
+    <div id="book-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Add to Collection</h2>
+            <form id="book-form">
+                <input type="text" id="title" placeholder="Book Title" required>
+                <input type="text" id="author" placeholder="Author" required>
+                <input type="url" id="cover" placeholder="Cover Image URL (Optional)">
+                <select id="status">
+                    <option value="Want to Read">Want to Read</option>
+                    <option value="Reading">Reading</option>
+                    <option value="Read">Read</option>
+                </select>
+                <button type="submit" class="btn-block">Save to Library</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

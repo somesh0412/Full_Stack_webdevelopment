@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VaultKey | Password Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Vault<span>Key</span></h1>
+            <p>Securely store and generate your credentials.</p>
+        </header>
+
+        <section class="card">
+            <form id="pm-form">
+                <div class="input-group">
+                    <label>Website/App</label>
+                    <input type="text" id="site" placeholder="e.g. GitHub" required>
+                </div>
+                <div class="input-group">
+                    <label>Username/Email</label>
+                    <input type="text" id="username" placeholder="e.g. somesh@mail.com" required>
+                </div>
+                <div class="input-group">
+                    <label>Password</label>
+                    <div class="pass-wrapper">
+                        <input type="text" id="password" placeholder="Enter or generate password" required>
+                        <button type="button" id="gen-btn" title="Generate Random Password">🎲</button>
+                    </div>
+                </div>
+                <button type="submit" class="btn-primary">Save to Vault</button>
+            </form>
+        </section>
+
+        <section class="vault-section">
+            <h3>Saved Credentials</h3>
+            <div id="password-list" class="password-list">
+                </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

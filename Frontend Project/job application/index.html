@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareerPulse | Find Your Next Role</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="hero">
+        <nav class="navbar">
+            <h1 class="logo">Career<span>Pulse</span></h1>
+            <div id="app-stats">Applied: <span id="applied-count">0</span></div>
+        </nav>
+        <div class="search-box">
+            <h2>Find your dream career</h2>
+            <input type="text" id="job-search" placeholder="Search by role, company, or skill...">
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="job-filter">
+            <button class="filter-btn active" data-type="All">All Jobs</button>
+            <button class="filter-btn" data-type="Remote">Remote</button>
+            <button class="filter-btn" data-type="On-site">On-site</button>
+        </div>
+
+        <div id="job-list" class="job-grid">
+            </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

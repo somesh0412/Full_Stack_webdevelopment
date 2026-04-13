@@ -1,0 +1,51 @@
+:root {
+    --primary: #2563eb;
+    --bg: #f8fafc;
+    --text: #1e293b;
+    --border: #e2e8f0;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+
+body { background: var(--bg); color: var(--text); padding: 40px 20px; }
+
+.app-container { max-width: 600px; margin: 0 auto; }
+
+.booking-card {
+    background: white; padding: 2.5rem; border-radius: 20px;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05); margin-bottom: 2rem;
+}
+
+h1 { font-size: 1.5rem; margin-bottom: 8px; color: var(--primary); }
+header p { color: #64748b; margin-bottom: 2rem; font-size: 0.9rem; }
+
+.input-group { margin-bottom: 1.5rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+label { display: block; font-weight: 600; font-size: 0.85rem; margin-bottom: 8px; }
+
+input, select {
+    width: 100%; padding: 12px; border: 1px solid var(--border);
+    border-radius: 10px; font-size: 1rem; outline: none; transition: 0.2s;
+}
+
+input:focus, select:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1); }
+
+.btn-primary {
+    width: 100%; padding: 14px; background: var(--primary); color: white;
+    border: none; border-radius: 10px; font-weight: 700; cursor: pointer; transition: 0.2s;
+}
+
+.btn-primary:hover { background: #1d4ed8; }
+
+/* Dashboard */
+.dashboard { background: white; border-radius: 20px; padding: 2rem; border: 1px solid var(--border); }
+.appointment-item {
+    padding: 15px 0; border-bottom: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center;
+}
+.appointment-item:last-child { border-bottom: none; }
+
+.appt-info h4 { font-size: 0.95rem; }
+.appt-info p { font-size: 0.8rem; color: #64748b; margin-top: 4px; }
+.status-badge { background: #dcfce7; color: #166534; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; }

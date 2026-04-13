@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventHub | Plan & Track</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-content">
+            <h1>Event<span>Hub</span></h1>
+            <button id="open-modal" class="btn-add">+ Create Event</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">All Events</button>
+            <button class="filter-btn" data-filter="upcoming">Upcoming</button>
+            <button class="filter-btn" data-filter="past">Past</button>
+        </div>
+
+        <div id="event-grid" class="event-grid">
+            </div>
+    </main>
+
+    <div id="event-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>New Event Details</h2>
+            <form id="event-form">
+                <input type="text" id="event-name" placeholder="Event Name" required>
+                <div class="form-row">
+                    <input type="date" id="event-date" required>
+                    <select id="event-category">
+                        <option value="Work">Work</option>
+                        <option value="Social">Social</option>
+                        <option value="Workshop">Workshop</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <textarea id="event-desc" placeholder="Brief Description"></textarea>
+                <button type="submit" class="btn-submit">Save Event</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

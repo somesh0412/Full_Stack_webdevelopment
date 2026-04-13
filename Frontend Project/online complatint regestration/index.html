@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResolveIt | Complaint Management</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container nav-flex">
+            <h1 class="logo">Resolve<span>It</span></h1>
+            <div class="nav-links">
+                <button onclick="toggleView('form')">File Complaint</button>
+                <button onclick="toggleView('status')">Track Status</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="form-view">
+            <div class="header-block">
+                <h2>Lodge a New Complaint</h2>
+                <p>Please provide accurate details to help us resolve your issue faster.</p>
+            </div>
+
+            <form id="complaint-form" class="card">
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label>Full Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Department / Category</label>
+                        <select id="category">
+                            <option value="Technical">Technical Support</option>
+                            <option value="Billing">Billing & Finance</option>
+                            <option value="Service">Service Quality</option>
+                            <option value="Other">General Inquiry</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Complaint Subject</label>
+                    <input type="text" id="subject" placeholder="Brief summary of the issue" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Detailed Description</label>
+                    <textarea id="description" rows="5" required></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Submit Complaint</button>
+            </form>
+        </section>
+
+        <section id="status-view" class="hidden">
+            <div class="header-block">
+                <h2>Track Your Grievance</h2>
+                <p>View the current progress of your submitted complaints.</p>
+            </div>
+            <div id="complaint-list" class="complaint-grid">
+                </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

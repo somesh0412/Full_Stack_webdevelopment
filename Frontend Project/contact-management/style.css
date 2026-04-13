@@ -1,0 +1,98 @@
+:root {
+    --primary: #2563eb;
+    --bg-gray: #f1f5f9;
+    --text-main: #0f172a;
+    --border: #e2e8f0;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+
+body {
+    background-color: var(--bg-gray);
+    color: var(--text-main);
+    padding: 20px;
+}
+
+.app-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Styles */
+.form-section {
+    border-right: 1px solid var(--border);
+    padding-right: 20px;
+}
+
+h2 { margin-bottom: 20px; font-weight: 600; }
+
+.input-group { margin-bottom: 15px; }
+
+label { display: block; font-size: 0.85rem; font-weight: 500; margin-bottom: 5px; color: #64748b; }
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    outline: none;
+}
+
+input:focus { border-color: var(--primary); }
+
+.btn-save {
+    width: 100%;
+    padding: 12px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+/* List Styles */
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#search { width: 250px; }
+
+.contact-card {
+    background: #f8fafc;
+    border: 1px solid var(--border);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-info h4 { font-size: 1.1rem; }
+.contact-info p { font-size: 0.9rem; color: #64748b; }
+
+.btn-delete {
+    background: #fee2e2;
+    color: #ef4444;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 850px) {
+    .app-container { grid-template-columns: 1fr; }
+    .form-section { border-right: none; border-bottom: 1px solid var(--border); padding-bottom: 20px; }
+}
