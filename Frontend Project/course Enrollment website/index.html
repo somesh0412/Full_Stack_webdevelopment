@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduFlow | Upskill Your Career</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-content">
+            <h1 class="logo" onclick="showPage('home')">Edu<span>Flow</span></h1>
+            <div class="nav-links">
+                <button onclick="showPage('home')">Courses</button>
+                <button class="cart-btn" onclick="showPage('checkout')">
+                    Cart (<span id="cart-count">0</span>)
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="home-page" class="container page">
+        <header class="hero">
+            <h2>Upcoming Professional Courses</h2>
+            <p>Master industry-standard skills with expert-led training.</p>
+        </header>
+        <div class="course-grid" id="course-grid"></div>
+    </main>
+
+    <section id="checkout-page" class="container page hidden">
+        <div class="checkout-layout">
+            <div class="order-summary card">
+                <h3>Order Summary</h3>
+                <div id="cart-items"></div>
+                <hr>
+                <div class="total-row">
+                    <span>Total Amount:</span>
+                    <span id="total-price">₹0</span>
+                </div>
+            </div>
+
+            <div class="payment-details card">
+                <h3>Secure Payment</h3>
+                <form id="payment-form">
+                    <div class="input-group">
+                        <label>Cardholder Name</label>
+                        <input type="text" placeholder="Somesh Ramesh Raut" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Card Number</label>
+                        <input type="text" placeholder="1234 5678 9101 1121" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="text" placeholder="MM/YY" required>
+                        <input type="password" placeholder="CVV" required>
+                    </div>
+                    <button type="submit" class="btn-pay">Pay & Enroll Now</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

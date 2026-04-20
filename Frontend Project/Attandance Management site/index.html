@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendly | Attendance Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <header class="main-header">
+            <h1 class="logo">Attend<span>ly</span></h1>
+            <div id="live-clock" class="clock">00:00:00</div>
+        </header>
+
+        <div class="grid-layout">
+            <section class="card attendance-card">
+                <h3>Submit Attendance</h3>
+                <p class="date-label" id="today-date"></p>
+                
+                <form id="attendance-form">
+                    <div class="input-group">
+                        <label>Employee / Student Name</label>
+                        <input type="text" id="user-name" placeholder="Enter Full Name" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>Department</label>
+                        <select id="department">
+                            <option value="Engineering">Engineering</option>
+                            <option value="Design">Design</option>
+                            <option value="Management">Management</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-checkin">Confirm Attendance</button>
+                </form>
+            </section>
+
+            <section class="card summary-card">
+                <h3>Daily Summary</h3>
+                <div class="stat-box">
+                    <span id="total-count">0</span>
+                    <small>Total Present Today</small>
+                </div>
+            </section>
+        </div>
+
+        <section class="card history-section">
+            <h3>Attendance Log</h3>
+            <div class="table-wrapper">
+                <table id="attendance-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Department</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="attendance-log">
+                        </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

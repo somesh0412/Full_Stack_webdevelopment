@@ -1,0 +1,51 @@
+:root {
+    --primary: #3b82f6;
+    --bg: #0f172a;
+    --card: #1e293b;
+    --text: #f8fafc;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+
+body { background: var(--bg); color: var(--text); padding: 60px 20px; }
+
+.container { max-width: 600px; margin: 0 auto; text-align: center; }
+
+header { margin-bottom: 3rem; }
+.logo { font-size: 2.5rem; font-weight: 800; }
+.logo span { color: var(--primary); }
+header p { color: #94a3b8; margin-top: 10px; }
+
+.card { background: var(--card); padding: 30px; border-radius: 20px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3); }
+
+.input-group { display: flex; gap: 10px; }
+input { 
+    flex-grow: 1; padding: 15px; border-radius: 12px; border: 1px solid #334155; 
+    background: #0f172a; color: white; outline: none; transition: 0.3s;
+}
+input:focus { border-color: var(--primary); }
+
+.btn-primary { 
+    background: var(--primary); color: white; border: none; padding: 0 25px; 
+    border-radius: 12px; font-weight: 700; cursor: pointer; 
+}
+
+.result-box { margin-top: 25px; padding-top: 25px; border-top: 1px solid #334155; text-align: left; }
+.hidden { display: none; }
+
+.link-display { 
+    display: flex; justify-content: space-between; align-items: center; 
+    background: #0f172a; padding: 12px 15px; border-radius: 8px; margin-top: 10px;
+}
+#short-url-text { color: var(--primary); font-weight: 600; }
+
+#copy-btn { background: #334155; border: none; color: white; padding: 5px 12px; border-radius: 6px; cursor: pointer; font-size: 0.8rem; }
+
+/* History List */
+.history-section { margin-top: 3rem; text-align: left; }
+.links-list { margin-top: 1rem; }
+.link-item { 
+    background: var(--card); padding: 15px; border-radius: 12px; margin-bottom: 10px;
+    display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem;
+}
+.link-item .long { color: #94a3b8; max-width: 250px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }

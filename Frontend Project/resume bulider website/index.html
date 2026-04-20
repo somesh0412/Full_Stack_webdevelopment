@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickCV | Instant Resume Builder</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="no-print">
+        <nav class="container">
+            <h1 class="logo">Quick<span>CV</span></h1>
+            <button onclick="window.print()" class="btn-print">Download PDF</button>
+        </nav>
+    </header>
+
+    <main class="app-container">
+        <aside class="editor no-print">
+            <div class="input-section">
+                <h3>Personal Info</h3>
+                <input type="text" id="in-name" placeholder="Full Name" oninput="updatePreview()">
+                <input type="text" id="in-role" placeholder="Target Job Title" oninput="updatePreview()">
+                <input type="email" id="in-email" placeholder="Email Address" oninput="updatePreview()">
+                <input type="text" id="in-phone" placeholder="Phone Number" oninput="updatePreview()">
+            </div>
+
+            <div class="input-section">
+                <h3>Professional Summary</h3>
+                <textarea id="in-sum" placeholder="Write a short bio..." oninput="updatePreview()"></textarea>
+            </div>
+
+            <div class="input-section">
+                <h3>Experience</h3>
+                <textarea id="in-exp" placeholder="Company Name - Role (Date)&#10;• Key Achievement" oninput="updatePreview()"></textarea>
+            </div>
+
+            <div class="input-section">
+                <h3>Skills</h3>
+                <input type="text" id="in-skills" placeholder="Java, C#, React, Project Management" oninput="updatePreview()">
+            </div>
+        </aside>
+
+        <section class="preview-area">
+            <div id="resume-paper" class="resume-paper">
+                <header class="resume-header">
+                    <h1 id="out-name">Your Name</h1>
+                    <p id="out-role" class="subtitle">Professional Title</p>
+                    <div class="contact-info">
+                        <span id="out-email">email@example.com</span> | 
+                        <span id="out-phone">123-456-7890</span>
+                    </div>
+                </header>
+
+                <div class="resume-content">
+                    <section>
+                        <h4>Summary</h4>
+                        <p id="out-sum">A brief overview of your professional background and goals.</p>
+                    </section>
+
+                    <section>
+                        <h4>Experience</h4>
+                        <div id="out-exp" class="formatted-text">List your previous roles and responsibilities here.</div>
+                    </section>
+
+                    <section>
+                        <h4>Technical Skills</h4>
+                        <p id="out-skills">Skills will appear here...</p>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

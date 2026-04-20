@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow | Manage Your Workflow</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <header class="dashboard-header">
+            <div class="welcome">
+                <h1>My Workspace</h1>
+                <p id="current-date"></p>
+            </div>
+            <div class="stats">
+                <div class="stat-card">
+                    <span id="pending-count">0</span>
+                    <small>Pending</small>
+                </div>
+                <div class="stat-card">
+                    <span id="completed-count">0</span>
+                    <small>Completed</small>
+                </div>
+            </div>
+        </header>
+
+        <section class="task-input card">
+            <form id="task-form">
+                <div class="input-main">
+                    <input type="text" id="task-title" placeholder="What needs to be done?" required>
+                    <select id="task-priority">
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                    <button type="submit" class="btn-add">Add Task</button>
+                </div>
+            </form>
+        </section>
+
+        <div class="filter-bar">
+            <button onclick="filterTasks('all')" class="active">All</button>
+            <button onclick="filterTasks('pending')">Pending</button>
+            <button onclick="filterTasks('completed')">Completed</button>
+        </div>
+
+        <main id="task-list" class="task-list">
+            </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

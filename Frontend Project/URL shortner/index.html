@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZipLink | URL Shortener</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1 class="logo">Zip<span>Link</span></h1>
+            <p>Shorten your links, broaden your reach.</p>
+        </header>
+
+        <main class="card">
+            <form id="shortener-form">
+                <div class="input-group">
+                    <input type="url" id="long-url" placeholder="Paste a long URL (e.g., https://github.com/somesh-raut/...)" required>
+                    <button type="submit" class="btn-primary">Shorten</button>
+                </div>
+            </form>
+
+            <div id="result-box" class="result-box hidden">
+                <div class="result-content">
+                    <p>Your shortened URL:</p>
+                    <div class="link-display">
+                        <span id="short-url-text">ziplink.co/xK3j2L</span>
+                        <button onclick="copyLink()" id="copy-btn">Copy</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <section class="history-section">
+            <h3>Recent Links</h3>
+            <div id="links-list" class="links-list">
+                </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

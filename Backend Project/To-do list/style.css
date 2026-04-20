@@ -1,0 +1,22 @@
+:root {
+    --primary: #6366f1;
+    --bg: #0f172a;
+    --card: #1e293b;
+    --text: #f1f5f9;
+}
+
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', sans-serif; display: flex; justify-content: center; padding-top: 50px; }
+
+.container { background: var(--card); padding: 2rem; border-radius: 16px; width: 400px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
+
+input { width: 70%; padding: 10px; border-radius: 8px; border: none; }
+button { padding: 10px; border-radius: 8px; border: none; background: var(--primary); color: white; cursor: pointer; }
+
+ul { list-style: none; padding: 0; margin-top: 20px; }
+
+li { 
+    background: #334155; padding: 12px; margin-bottom: 8px; border-radius: 8px; 
+    display: flex; justify-content: space-between; align-items: center; 
+}
+
+.delete-btn { background: #ef4444; padding: 5px 10px; font-size: 12px; }

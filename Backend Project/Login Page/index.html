@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="auth-container">
+    <h2 id="title">Register</h2>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="handleSubmit()">Submit</button>
+    <p onclick="toggleMode()" id="toggle-text" style="cursor:pointer; color:blue;">Already have an account? Login</p>
+</div>
+
+<script>
+    let isLogin = false;
+    function toggleMode() {
+        isLogin = !isLogin;
+        document.getElementById('title').innerText = isLogin ? "Login" : "Register";
+        document.getElementById('toggle-text').innerText = isLogin ? "Need an account? Register" : "Already have an account? Login";
+    }
+
+    async function handleSubmit() {
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const endpoint = isLogin ? '/login' : '/register';
+        
+        const res = await fetch(`http://localhost:3000${endpoint}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ username, password })
+        });
+        const data = await res.json();
+        
+        if (isLogin && data.token) {
+            localStorage.setItem('token', data.token);
+            alert("Login Successful!");
+        } else {
+            alert(data.message);
+        }
+    }
+</script>
+</body>
+</html>
