@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator | Smart Split</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="calculator-container">
+        <div class="input-section">
+            <div class="input-group">
+                <label for="bill">Bill</label>
+                <div class="input-wrapper">
+                    <span class="currency">$</span>
+                    <input type="number" id="bill" placeholder="0.00" min="0">
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Select Tip %</label>
+                <div class="tip-grid" id="tipGrid">
+                    <button class="tip-btn" data-tip="5">5%</button>
+                    <button class="tip-btn" data-tip="10">10%</button>
+                    <button class="tip-btn" data-tip="15">15%</button>
+                    <button class="tip-btn" data-tip="25">25%</button>
+                    <button class="tip-btn" data-tip="50">50%</button>
+                    <input type="number" id="customTip" class="custom-tip" placeholder="Custom" min="0">
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="people">Number of People</label>
+                <div class="input-wrapper">
+                    <span class="icon">👤</span>
+                    <input type="number" id="people" placeholder="1" min="1" value="1">
+                </div>
+                <span class="error-msg" id="peopleError">Can't be zero or negative</span>
+            </div>
+        </div>
+
+        <div class="display-section">
+            <div class="summary-item">
+                <div class="summary-label">
+                    <h3>Tip Amount</h3>
+                    <span>/ person</span>
+                </div>
+                <div class="summary-value">$<span id="tipAmount">0.00</span></div>
+            </div>
+
+            <div class="summary-item">
+                <div class="summary-label">
+                    <h3>Total</h3>
+                    <span>/ person</span>
+                </div>
+                <div class="summary-value">$<span id="totalAmount">0.00</span></div>
+            </div>
+
+            <button id="reset-btn" class="reset-btn" disabled>RESET</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

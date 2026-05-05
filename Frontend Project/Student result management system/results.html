@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results | Student Result System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <h2 class="logo">Result System</h2>
+        <div class="nav-right">
+            <span id="userName">Welcome, User</span>
+            <button id="logoutBtn" class="btn-logout">Logout</button>
+        </div>
+    </header>
+
+    <!-- Layout -->
+    <div class="container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <ul>
+                <li><a href="dashboard.html">🏠 Home</a></li>
+                <li><a href="results.html" class="active">📊 Results</a></li>
+                <li><a href="add-result.html" id="adminMenu">➕ Add Result</a></li>
+                <li><a href="profile.html">👤 Profile</a></li>
+            </ul>
+        </aside>
+
+        <!-- Content -->
+        <main class="content">
+
+            <div class="card">
+                <h1>Student Results</h1>
+
+                <!-- Search -->
+                <input type="text" id="searchInput" placeholder="Search by Name or Roll No..." class="search-box">
+
+                <!-- Table -->
+                <div class="table-container">
+                    <table id="resultTable">
+                        <thead>
+                            <tr>
+                                <th>Roll No</th>
+                                <th>Name</th>
+                                <th>Math</th>
+                                <th>Science</th>
+                                <th>English</th>
+                                <th>Total</th>
+                                <th>Percentage</th>
+                                <th>Grade</th>
+                                <th>Status</th>
+                                <th class="admin-actions">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="resultBody">
+                            <!-- Data inserted via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

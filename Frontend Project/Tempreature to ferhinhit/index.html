@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter | Quick Convert</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="converter-container card">
+        <header>
+            <h1>Temp Converter</h1>
+            <p class="subtitle">Convert between Celsius, Fahrenheit, and Kelvin</p>
+        </header>
+
+        <main class="converter-body">
+            <div class="input-group">
+                <label for="tempInput">Enter Temperature</label>
+                <div class="field-row">
+                    <input type="number" id="tempInput" value="0" placeholder="e.g., 32">
+                    <select id="unitInput">
+                        <option value="C">Celsius (°C)</option>
+                        <option value="F" selected>Fahrenheit (°F)</option>
+                        <option value="K">Kelvin (K)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="results-grid">
+                <div class="result-box">
+                    <span class="result-label">Celsius</span>
+                    <span id="celsiusOutput" class="result-value">--</span>
+                </div>
+                <div class="result-box">
+                    <span class="result-label">Fahrenheit</span>
+                    <span id="fahrenheitOutput" class="result-value">--</span>
+                </div>
+                <div class="result-box">
+                    <span class="result-label">Kelvin</span>
+                    <span id="kelvinOutput" class="result-value">--</span>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

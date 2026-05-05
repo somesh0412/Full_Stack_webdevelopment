@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>PDF Merger Pro | Merge PDF Files Online</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+        <h1>📑 PDF Merger Pro</h1>
+        <p>Merge multiple PDF files into one | Rearrange pages | Free & Secure</p>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-grid">
+        <!-- Left Panel: File Management -->
+        <div class="panel files-panel">
+            <div class="panel-header">
+                <h2>📄 PDF Files</h2>
+                <span class="badge" id="fileCount">0 files</span>
+            </div>
+            <div class="panel-body">
+                <!-- Upload Area -->
+                <div class="drop-zone" id="dropZone">
+                    <div class="drop-zone-content">
+                        <span class="upload-icon">📚</span>
+                        <p>Drag & drop PDF files here</p>
+                        <p class="small-text">or click to browse (max 20 files, 50MB each)</p>
+                        <input type="file" id="fileInput" accept=".pdf" multiple hidden>
+                        <button type="button" id="browseBtn" class="secondary-btn">Choose PDFs</button>
+                    </div>
+                </div>
+
+                <!-- File List -->
+                <div class="file-list-container">
+                    <div class="file-list-header">
+                        <h3>📋 File List</h3>
+                        <button id="clearAllBtn" class="clear-btn" title="Clear all files">🗑️ Clear All</button>
+                    </div>
+                    <div id="fileList" class="file-list">
+                        <div class="empty-state">No files added. Upload PDFs to merge.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Panel: Merge Controls & Preview -->
+        <div class="panel merge-panel">
+            <div class="panel-header">
+                <h2>🔧 Merge Settings</h2>
+                <button id="resetBtn" class="reset-btn" title="Reset all">⟳ Reset</button>
+            </div>
+            <div class="panel-body">
+                <!-- Order Options -->
+                <div class="settings-section">
+                    <h3>📌 Page Order</h3>
+                    <div class="order-controls">
+                        <button id="moveUpBtn" class="order-btn" disabled>⬆️ Move Up</button>
+                        <button id="moveDownBtn" class="order-btn" disabled>⬇️ Move Down</button>
+                        <button id="reverseOrderBtn" class="order-btn secondary">🔄 Reverse Order</button>
+                    </div>
+                    <p class="hint-text">Drag files to reorder or use buttons</p>
+                </div>
+
+                <!-- Merge Options -->
+                <div class="settings-section">
+                    <h3>⚙️ Merge Options</h3>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="addPageNumbers">
+                        <label for="addPageNumbers">🔢 Add page numbers to merged PDF</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="compressOutput">
+                        <label for="compressOutput">🗜️ Compress output PDF (smaller file size)</label>
+                    </div>
+                    <div class="form-group">
+                        <label>Output Filename:</label>
+                        <input type="text" id="outputFilename" placeholder="merged_document" value="merged_document">
+                        <span class="file-ext">.pdf</span>
+                    </div>
+                </div>
+
+                <!-- Merge Button & Progress -->
+                <button id="mergeBtn" class="primary-btn merge-btn" disabled>
+                    🔗 Merge PDF Files
+                </button>
+                <div class="progress-container" id="progressContainer" style="display: none;">
+                    <div class="progress-bar" id="mergeProgress"></div>
+                    <p class="progress-text" id="progressText">Processing...</p>
+                </div>
+
+                <!-- Results Section -->
+                <div id="resultsSection" class="results-section" style="display: none;">
+                    <div class="result-card">
+                        <h3>✅ Merge Complete!</h3>
+                        <div class="result-info">
+                            <p><strong>Files merged:</strong> <span id="mergedCount">0</span></p>
+                            <p><strong>Output size:</strong> <span id="outputSize">-</span></p>
+                            <p><strong>Total pages:</strong> <span id="totalPages">-</span></p>
+                        </div>
+                        <button id="downloadBtn" class="primary-btn download-btn">
+                            💾 Download Merged PDF
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+        <p>🔒 Client-side processing | Your PDFs never leave your device | 100% private & secure</p>
+        <p>⚠️ Works best with standard PDFs | Maximum 20 files, 50MB each</p>
+    </footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

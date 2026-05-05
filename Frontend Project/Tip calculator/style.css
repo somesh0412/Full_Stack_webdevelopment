@@ -1,0 +1,230 @@
+:root {
+    --bg: #c5e4e7;
+    --card-bg: #ffffff;
+    --primary: #26c2ad;
+    --primary-light: #9fe8df;
+    --dark-green: #00474b;
+    --mid-green: #5e7a7d;
+    --light-green: #f3f9fa;
+    --text-white: #ffffff;
+    --error: #e17052;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Space Mono', monospace;
+}
+
+body {
+    background-color: var(--bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.calculator-container {
+    background: var(--card-bg);
+    padding: 32px;
+    border-radius: 25px;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.08);
+    max-width: 920px;
+    width: 100%;
+    display: flex;
+    gap: 48px;
+}
+
+.input-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.input-group {
+    position: relative;
+}
+
+label {
+    display: block;
+    color: var(--mid-green);
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.input-wrapper {
+    position: relative;
+    background: var(--light-green);
+    border-radius: 5px;
+    border: 2px solid transparent;
+    transition: 0.2s;
+}
+
+.input-wrapper:focus-within {
+    border-color: var(--primary);
+}
+
+.currency, .icon {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--mid-green);
+    font-weight: 700;
+}
+
+input[type="number"] {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 10px 18px 10px 40px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--dark-green);
+    text-align: right;
+    border-radius: 5px;
+}
+
+input[type="number"]::placeholder {
+    color: #9ebbbd;
+}
+
+/* Chrome, Safari, Edge, Opera: Remove arrows */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.tip-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.tip-btn {
+    background: var(--dark-green);
+    color: var(--text-white);
+    border: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.tip-btn:hover {
+    background: var(--primary-light);
+    color: var(--dark-green);
+}
+
+.tip-btn.active {
+    background: var(--primary);
+    color: var(--dark-green);
+}
+
+.custom-tip {
+    background: var(--light-green) !important;
+    border: 2px solid transparent !important;
+    padding: 6px !important;
+    text-align: right;
+    color: var(--dark-green);
+}
+
+.custom-tip:focus {
+    border-color: var(--primary) !important;
+}
+
+.error-msg {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--error);
+}
+
+.input-group.invalid .input-wrapper {
+    border-color: var(--error);
+}
+
+.input-group.invalid .error-msg {
+    display: block;
+}
+
+/* Display Section */
+.display-section {
+    flex: 1;
+    background: var(--dark-green);
+    padding: 40px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.summary-label h3 {
+    color: var(--text-white);
+    font-size: 1rem;
+}
+
+.summary-label span {
+    color: var(--mid-green);
+    font-size: 0.85rem;
+}
+
+.summary-value {
+    color: var(--primary);
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.reset-btn {
+    background: var(--primary);
+    color: var(--dark-green);
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    width: 100%;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.reset-btn:hover:not(:disabled) {
+    background: var(--primary-light);
+}
+
+.reset-btn:disabled {
+    background: #0d686d;
+    cursor: not-allowed;
+    opacity: 0.35;
+}
+
+/* Mobile Friendly */
+@media (max-width: 768px) {
+    .calculator-container {
+        flex-direction: column;
+        gap: 32px;
+        padding: 24px;
+    }
+    .tip-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

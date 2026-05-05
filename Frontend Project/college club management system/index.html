@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Club Hub | Student Management</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <span class="logo">Campus<span>ClubHub</span></span>
+            <ul class="nav-links">
+                <li><a href="#clubs">Explore Clubs</a></li>
+                <li><a href="#register">Join a Club</a></li>
+                <li><a href="#admin">Admin Panel</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="dashboard-layout">
+        
+        <section id="clubs" class="directory-section card">
+            <div class="section-header">
+                <h2>Active Campus Clubs</h2>
+                <input type="text" id="searchInput" placeholder="Search by club name or category..." onkeyup="filterClubs()">
+            </div>
+            <div class="clubs-grid" id="clubsContainer">
+                </div>
+        </section>
+
+        <section id="register" class="form-section card">
+            <h2>Club Membership Application</h2>
+            <form id="membershipForm">
+                <div class="form-group">
+                    <label for="studentName">Full Name</label>
+                    <input type="text" id="studentName" placeholder="Jane Doe" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="studentId">Student ID / PRN</label>
+                        <input type="text" id="studentId" placeholder="S2026001" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="clubSelect">Select Club</label>
+                        <select id="clubSelect" required>
+                            <option value="">Select a club</option>
+                            </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="statement">Why do you want to join this club?</label>
+                    <textarea id="statement" rows="3" placeholder="Describe your interest and past experiences..." required></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Submit Application</button>
+            </form>
+        </section>
+    </div>
+
+    <section id="admin" class="admin-section card">
+        <h2>Submitted Membership Applications</h2>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Student ID</th>
+                        <th>Applied Club</th>
+                        <th>Statement of Interest</th>
+                        <th>Application Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="applicationTableBody">
+                    </tbody>
+            </table>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Stay | Hotel Booking & Reservations</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <span class="logo">🏨 Grand<span>Stay</span></span>
+            <ul class="nav-links">
+                <li><a href="#rooms">Available Rooms</a></li>
+                <li><a href="#bookings">My Bookings</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="main-layout">
+        <section class="filter-section card">
+            <h2>Find Your Room</h2>
+            <form id="searchForm">
+                <div class="form-group">
+                    <label for="checkIn">Check-In Date</label>
+                    <input type="date" id="checkIn" required>
+                </div>
+                <div class="form-group">
+                    <label for="checkOut">Check-Out Date</label>
+                    <input type="date" id="checkOut" required>
+                </div>
+                <div class="form-group">
+                    <label for="roomType">Room Category</label>
+                    <select id="roomType" onchange="filterRooms()">
+                        <option value="All">All Categories</option>
+                        <option value="Standard">Standard</option>
+                        <option value="Deluxe">Deluxe</option>
+                        <option value="Suite">Presidential Suite</option>
+                    </select>
+                </div>
+            </form>
+        </section>
+
+        <section id="rooms" class="directory-section card">
+            <div class="section-header">
+                <h2>Our Premium Rooms</h2>
+                <span id="resultsCount" class="results-badge">3 Rooms Available</span>
+            </div>
+            <div class="rooms-grid" id="roomsContainer">
+                </div>
+        </section>
+    </div>
+
+    <section id="bookings" class="bookings-section card">
+        <h2>Your Active Reservations</h2>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Guest Name</th>
+                        <th>Room Reserved</th>
+                        <th>Check-In</th>
+                        <th>Check-Out</th>
+                        <th>Total Cost</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="bookingsTableBody">
+                    </tbody>
+            </table>
+        </div>
+    </section>
+
+    <div id="bookingModal" class="modal">
+        <div class="modal-content card">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2>Confirm Reservation</h2>
+            <p id="modalRoomDetails" style="color: var(--text-muted); margin-bottom: 20px;"></p>
+            <form id="confirmBookingForm">
+                <input type="hidden" id="modalRoomId">
+                <div class="form-group">
+                    <label for="guestName">Guest Full Name</label>
+                    <input type="text" id="guestName" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="guestEmail">Email Address</label>
+                    <input type="email" id="guestEmail" placeholder="john.doe@example.com" required>
+                </div>
+                <button type="submit" class="btn-submit">Confirm and Book Room</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

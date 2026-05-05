@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Event Countdown</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <span class="logo">⏱️ Time<span>Ahead</span></span>
+        </div>
+    </nav>
+
+    <div class="main-layout">
+        <section class="config-section card">
+            <h2>Create Countdown</h2>
+            <form id="countdownForm">
+                <div class="form-group">
+                    <label for="eventTitle">What are you counting down to?</label>
+                    <input type="text" id="eventTitle" placeholder="e.g., Summer Vacation, Product Launch" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="eventDate">Target Date</label>
+                        <input type="date" id="eventDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="eventTime">Target Time</label>
+                        <input type="time" id="eventTime" value="00:00" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn-submit">Start Countdown</button>
+            </form>
+        </section>
+
+        <section class="display-section card">
+            <div class="event-header">
+                <h2 id="activeTitle">Launch Event</h2>
+                <span id="targetDisplay" class="target-display">Set your date above</span>
+            </div>
+
+            <div class="countdown-grid">
+                <div class="time-block">
+                    <span id="days" class="time-number">00</span>
+                    <span class="time-label">Days</span>
+                </div>
+                <div class="time-block">
+                    <span id="hours" class="time-number">00</span>
+                    <span class="time-label">Hours</span>
+                </div>
+                <div class="time-block">
+                    <span id="minutes" class="time-number">00</span>
+                    <span class="time-label">Minutes</span>
+                </div>
+                <div class="time-block">
+                    <span id="seconds" class="time-number">00</span>
+                    <span class="time-label">Seconds</span>
+                </div>
+            </div>
+
+            <div id="countdownStatus" class="countdown-status"></div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

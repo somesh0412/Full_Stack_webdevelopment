@@ -1,0 +1,109 @@
+:root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --accent-x: #3b82f6;
+    --accent-o: #10b981;
+    --text: #f8fafc;
+    --border: #334155;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.game-container {
+    text-align: center;
+    background: var(--card);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border);
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.status {
+    font-size: 1.1rem;
+    color: #94a3b8;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.status span {
+    color: var(--accent-x);
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    margin: 0 auto 25px auto;
+}
+
+.cell {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    user-select: none;
+}
+
+.cell:hover {
+    background: #172554;
+    border-color: var(--accent-x);
+}
+
+.cell.x {
+    color: var(--accent-x);
+    cursor: default;
+}
+
+.cell.o {
+    color: var(--accent-o);
+    cursor: default;
+}
+
+.cell.x:hover, .cell.o:hover {
+    background: var(--bg);
+    border-color: var(--border);
+}
+
+.reset-btn {
+    background: var(--accent-x);
+    color: white;
+    border: none;
+    padding: 12px 35px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.reset-btn:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+}

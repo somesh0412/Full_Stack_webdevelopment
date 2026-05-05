@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Digital Clock + Alarm System | Smart Alarm Clock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+        <h1>⏰ Digital Clock + Alarm System</h1>
+        <p>Smart alarm with multiple alarms | Ringtone picker | Snooze</p>
+    </header>
+
+    <!-- Main Clock Display -->
+    <div class="clock-card">
+        <div class="clock-panel">
+            <div class="time-display" id="timeDisplay">
+                <span id="hours">00</span>
+                <span class="colon">:</span>
+                <span id="minutes">00</span>
+                <span class="colon">:</span>
+                <span id="seconds">00</span>
+            </div>
+            <div class="date-display" id="dateDisplay"></div>
+            <div class="ampm-display" id="ampm">AM</div>
+        </div>
+    </div>
+
+    <!-- Alarm Creation Section -->
+    <div class="grid-2col">
+        <!-- Left: Set New Alarm -->
+        <div class="panel">
+            <div class="panel-header">
+                <h2>🔔 Set New Alarm</h2>
+                <span class="badge">Up to 6 alarms</span>
+            </div>
+            <div class="panel-body">
+                <div class="time-picker">
+                    <div class="picker-group">
+                        <label>Hour</label>
+                        <select id="alarmHour">
+                            <option value="1">01</option><option value="2">02</option><option value="3">03</option>
+                            <option value="4">04</option><option value="5">05</option><option value="6">06</option>
+                            <option value="7">07</option><option value="8">08</option><option value="9">09</option>
+                            <option value="10">10</option><option value="11">11</option><option value="12">12</option>
+                        </select>
+                    </div>
+                    <div class="picker-group">
+                        <label>Minute</label>
+                        <select id="alarmMinute">
+                            <option value="0">00</option><option value="1">01</option><option value="2">02</option>
+                            <option value="3">03</option><option value="4">04</option><option value="5">05</option>
+                            <option value="6">06</option><option value="7">07</option><option value="8">08</option>
+                            <option value="9">09</option>
+                            <script>for(let i=10;i<=59;i++) document.write(`<option value="${i}">${i}</option>`);</script>
+                        </select>
+                    </div>
+                    <div class="picker-group">
+                        <label>AM/PM</label>
+                        <select id="alarmPeriod">
+                            <option value="AM">AM</option>
+                            <option value="PM">PM</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>🔊 Select Ringtone</label>
+                    <select id="ringtoneSelect">
+                        <option value="beep">Beep (Classic)</option>
+                        <option value="digital">Digital Alert</option>
+                        <option value="chime">Gentle Chime</option>
+                        <option value="urgent">Urgent Bell</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>📝 Label (optional)</label>
+                    <input type="text" id="alarmLabel" placeholder="e.g., Wake up, Meeting, Medicine">
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="repeatDaily">
+                    <label for="repeatDaily">🔁 Repeat Daily</label>
+                </div>
+                <button id="setAlarmBtn" class="primary-btn">➕ Set Alarm</button>
+            </div>
+        </div>
+
+        <!-- Right: Alarm List + Controls -->
+        <div class="panel">
+            <div class="panel-header">
+                <h2>⏱️ Active Alarms</h2>
+                <button id="snoozeAllBtn" class="secondary-btn small">😴 Snooze All (5 min)</button>
+            </div>
+            <div class="panel-body">
+                <div id="alarmsList" class="alarms-container">
+                    <div class="empty-state">✨ No alarms set. Create your first alarm!</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Alarm Ringing Modal -->
+    <div id="alarmModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>⏰ ALARM RINGING!</h2>
+                <span class="modal-close" id="closeModal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p id="ringingLabel">Wake up!</p>
+                <p id="ringingTime"></p>
+                <div class="modal-buttons">
+                    <button id="stopAlarmBtn" class="primary-btn">🔇 Stop</button>
+                    <button id="snoozeBtn" class="secondary-btn">😴 Snooze (5 min)</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio Elements for Ringtones (preload) -->
+    <audio id="beepSound" preload="auto">
+        <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="digitalSound" preload="auto">
+        <source src="https://www.soundjay.com/misc/sounds/electronic-beep-02.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="chimeSound" preload="auto">
+        <source src="https://www.soundjay.com/misc/sounds/bell-chime-03.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="urgentSound" preload="auto">
+        <source src="https://www.soundjay.com/misc/sounds/alarm-clock-01.mp3" type="audio/mpeg">
+    </audio>
+    
+    <!-- Fallback Web Audio API (for browsers that block autoplay) -->
+    <button id="enableAudioBtn" class="audio-init-btn" style="display: none;">🔊 Enable Audio</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

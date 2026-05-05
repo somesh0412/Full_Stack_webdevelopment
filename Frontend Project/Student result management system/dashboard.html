@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Student Result System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <h2 class="logo">Result System</h2>
+        <div class="nav-right">
+            <span id="userName">Welcome, User</span>
+            <button id="logoutBtn" class="btn-logout">Logout</button>
+        </div>
+    </header>
+
+    <!-- Main Layout -->
+    <div class="container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <ul>
+                <li><a href="dashboard.html" class="active">🏠 Home</a></li>
+                <li><a href="results.html">📊 Results</a></li>
+                <li><a href="add-result.html" id="adminMenu">➕ Add Result</a></li>
+                <li><a href="profile.html">👤 Profile</a></li>
+            </ul>
+        </aside>
+
+        <!-- Content Area -->
+        <main class="content">
+
+            <div class="card">
+                <h1>Dashboard</h1>
+                <p id="welcomeText">Welcome to the Student Result Management System.</p>
+            </div>
+
+            <div class="dashboard-cards">
+
+                <div class="card">
+                    <h3>Total Students</h3>
+                    <p id="totalStudents">0</p>
+                </div>
+
+                <div class="card">
+                    <h3>Results Published</h3>
+                    <p id="totalResults">0</p>
+                </div>
+
+                <div class="card">
+                    <h3>Pass Percentage</h3>
+                    <p id="passPercent">0%</p>
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

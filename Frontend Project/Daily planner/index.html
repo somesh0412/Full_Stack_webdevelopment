@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Planner | Master Your Day</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <span class="logo">📅 Focus<span>Flow</span></span>
+            <span id="currentDate" class="date-display"></span>
+        </div>
+    </nav>
+
+    <div class="planner-layout">
+        
+        <div class="panel-left">
+            <section class="card priority-card">
+                <h2>Top Priorities Today</h2>
+                <div class="priority-inputs">
+                    <input type="text" id="prio1" placeholder="1. Most important goal...">
+                    <input type="text" id="prio2" placeholder="2. Second most important...">
+                    <input type="text" id="prio3" placeholder="3. Third most important...">
+                </div>
+            </section>
+
+            <section class="card tasks-card">
+                <div class="tasks-header">
+                    <h2>Tasks & Reminders</h2>
+                    <span id="taskCounter" class="task-counter">0% completed</span>
+                </div>
+                
+                <form id="todoForm" class="todo-form">
+                    <input type="text" id="taskInput" placeholder="Add a new task..." required>
+                    <button type="submit" class="btn-add">Add</button>
+                </form>
+
+                <ul id="todoList" class="todo-list">
+                    </ul>
+            </section>
+        </div>
+
+        <div class="panel-right">
+            <section class="card schedule-card">
+                <h2>Hourly Schedule</h2>
+                <div id="scheduleGrid" class="schedule-grid">
+                    </div>
+            </section>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

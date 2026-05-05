@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>College Virtual Notice Board | Official Announcements</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="dashboard">
+    <div class="college-header">
+        <h1>📢 VIRTUAL NOTICE BOARD</h1>
+        <p>🎓 MIT | Official Announcements</p>
+    </div>
+
+    <div class="notice-grid">
+        <!-- LEFT: NOTICE BOARD DISPLAY -->
+        <div class="board-area">
+            <div class="card board-card">
+                <div class="board-header">
+                    <h2>📌 Live Notices <span style="font-size: 0.9rem;">⚡</span></h2>
+                    <div class="notice-stats" id="noticeStats">0 notices</div>
+                </div>
+                <div class="filter-bar">
+                    <div class="filter-group">
+                        <button class="filter-btn active" data-filter="all">📋 All</button>
+                        <button class="filter-btn" data-filter="Academic">📚 Academic</button>
+                        <button class="filter-btn" data-filter="Event">🎉 Event</button>
+                        <button class="filter-btn" data-filter="Exam">✍️ Exam</button>
+                        <button class="filter-btn" data-filter="Holiday">🏖️ Holiday</button>
+                    </div>
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="🔍 Search title or desc...">
+                    </div>
+                </div>
+                <div class="notices-container" id="noticesList">
+                    <div class="empty-msg">📭 Loading notices...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT: ADMIN PANEL + ADD NOTICE -->
+        <div class="admin-area">
+            <div class="card">
+                <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">✍️ Admin Panel</h2>
+                <p style="font-size: 0.8rem; margin-bottom: 1.2rem; color:#2c5a6e;">Post important updates for students & faculty</p>
+                <form id="noticeForm">
+                    <div class="form-group">
+                        <label>📌 Title *</label>
+                        <input type="text" id="title" placeholder="e.g., Mid-Semester Exam Schedule" required>
+                    </div>
+                    <div class="form-group">
+                        <label>📄 Description *</label>
+                        <textarea id="desc" placeholder="Write full notice details ..." required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>🏷️ Category</label>
+                        <select id="category">
+                            <option value="Academic">📖 Academic</option>
+                            <option value="Event">🎊 Event</option>
+                            <option value="Exam">📝 Exam</option>
+                            <option value="Holiday">🌴 Holiday</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>📅 Date (optional)</label>
+                        <input type="date" id="date">
+                    </div>
+                    <button type="submit" class="btn-primary">➕ Publish Notice</button>
+                    <button type="button" id="loadSamplesBtn" class="btn-primary sample-btn" style="background:#eef2ff; color:#1f3b4c;">📂 Load Sample Notices</button>
+                </form>
+                <p style="font-size: 0.7rem; margin-top: 1rem; text-align: center; color:#6c86a0;">🔒 Admin: Add / Delete notices instantly</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer-note">
+        ⚡ Real-time virtual board | Click delete to remove | Filter & search dynamic updates
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

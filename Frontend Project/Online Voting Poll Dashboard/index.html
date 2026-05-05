@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Online Voting Poll Dashboard | Live Results</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="dashboard-container">
+    <!-- Header Section -->
+    <header class="dashboard-header">
+        <div class="header-content">
+            <h1>🗳️ Online Voting Poll Dashboard</h1>
+            <p>Real-time voting | Create polls | Live results with charts</p>
+        </div>
+        <div class="stats-badge">
+            <span id="totalVotes">0</span> total votes cast
+        </div>
+    </header>
+
+    <!-- Main Grid -->
+    <div class="dashboard-grid">
+        <!-- LEFT: Create New Poll Panel -->
+        <div class="panel create-panel">
+            <div class="panel-header">
+                <h2>📝 Create New Poll</h2>
+                <span class="badge">Admin Access</span>
+            </div>
+            <form id="createPollForm">
+                <div class="form-group">
+                    <label>Poll Question *</label>
+                    <input type="text" id="pollQuestion" placeholder="e.g., Which feature would you like to see next?" required>
+                </div>
+                <div class="form-group">
+                    <label>Options (at least 2, max 6)</label>
+                    <div id="optionsContainer">
+                        <div class="option-input-group">
+                            <input type="text" class="option-input" placeholder="Option 1" required>
+                            <button type="button" class="remove-option" disabled>✖</button>
+                        </div>
+                        <div class="option-input-group">
+                            <input type="text" class="option-input" placeholder="Option 2" required>
+                            <button type="button" class="remove-option" disabled>✖</button>
+                        </div>
+                    </div>
+                    <button type="button" id="addOptionBtn" class="secondary-btn">+ Add Option</button>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Expiry Date (optional)</label>
+                        <input type="datetime-local" id="expiryDate">
+                    </div>
+                    <div class="form-group">
+                        <label>Status</label>
+                        <select id="pollStatus">
+                            <option value="active">Active</option>
+                            <option value="closed">Closed (no voting)</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="primary-btn">🚀 Launch Poll</button>
+            </form>
+            <button type="button" id="loadSamplePollBtn" class="secondary-btn full-width" style="margin-top:12px;">📊 Load Sample Poll</button>
+        </div>
+
+        <!-- RIGHT: Active Polls & Dashboard -->
+        <div class="panel polls-panel">
+            <div class="panel-header">
+                <h2>📊 Active Polls Dashboard</h2>
+                <div class="filter-controls">
+                    <button class="filter-btn active" data-filter="all">All Polls</button>
+                    <button class="filter-btn" data-filter="active">Active</button>
+                    <button class="filter-btn" data-filter="closed">Closed</button>
+                </div>
+            </div>
+            <div id="pollsList" class="polls-container">
+                <!-- Dynamic polls will be injected here -->
+                <div class="empty-state">✨ No polls yet. Create your first poll!</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="dashboard-footer">
+        <p>⚡ Real-time voting system | Cast your vote once per poll | Results update instantly</p>
+    </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
